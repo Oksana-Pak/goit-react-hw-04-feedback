@@ -7,4 +7,7 @@ export const Button = styled.button`
   border-radius: 4px;
   cursor: pointer;
   text-transform: capitalize;
+  &:hover {
+    background-color: #e4ede6;
+  }
 `;
