@@ -11,10 +11,9 @@ export class App extends Component {
     bad: 0,
   };
 
-  handleIncrement = e => {
-    const eventValue = e.target.textContent.toLowerCase();
+  handleIncrement = type => {
     this.setState(prevState => ({
-      [eventValue]: prevState[eventValue] + 1,
+      [type]: prevState[type] + 1,
     }));
   };
 
@@ -30,13 +29,12 @@ export class App extends Component {
 
   render() {
     const { good, neutral, bad } = this.state;
-    const buttonName = Object.keys(this.state);
 
     return (
       <>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={buttonName}
+            options={Object.keys(this.state)}
             onLeaveFeedback={this.handleIncrement}
           />
         </Section>
